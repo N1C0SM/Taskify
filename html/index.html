@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Taskify</title>
+		<link rel="icon" href="../img/checklist.ico" />
+		<link rel="stylesheet" href="../css/styles.css" />
+		<script defer src="../js/script.js"></script>
+		<script src="https://unpkg.com/@phosphor-icons/web"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Todo-List App</h1>
+			<section id="hero">
+				<input id="inputText" type="text" placeholder="Agrega una nueva tarea" />
+				<button id="itemButton">Añadir <i class="ph ph-plus-circle"></i></button>
+			</section>
+		</header>
+		<main>
+			<div id="tasks-header">
+				<div id="tasks-counter">
+					<h2>Tareas creadas</h2>
+				</div>
+				<div id="tasks-completed">
+					<h3>Completadas</h3>
+				</div>
+			</div>
+			<section id="task-list"></section>
+		</main>
+	</body>
+</html>
