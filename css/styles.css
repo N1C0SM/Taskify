@@ -1,132 +1,158 @@
-/* Global styles */
 * {
-	/* margin: 0;
+	margin: 0;
 	padding: 0;
-	box-sizing: border-box; */
-}
-:root {
-	--primary-color: #4caf50;
-	--background-color: #f2f2f2;
-	--text-color: #333;
-	--font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
 }
 
 body {
-	font-family: var(--font-family);
-	background-color: var(--background-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: #f2f2f2;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
 }
 
-/* Header styles */
-
 header {
-	background-color: var(--primary-color);
+	background-color: #E0DCE4;
 	padding: 20px;
 	text-align: center;
 	color: #fff;
-}
 
-h1 {
-	margin: 5px;
-	font-weight: bold;
-	font-size: 24px;
-}
+	img {
+		width: 140px;
+		height: 48px;
+	}
 
-/* Main content styles */
+	#hero {
+		max-width: 100em;
+		margin: auto;
+		display: flex;
+		width: 100%;
+		gap: 8px;
+
+		#inputText {
+			width: 100%;
+			font-size: 16px;
+			color: #6B6572;
+			background: #F0EDF2;
+			border: 2px solid #E0DCE4;
+			border-radius: 8px;
+			padding: 10px;
+			outline: none;
+
+			&:focus {
+				border-color: #6F3CC3;
+				background: #fff;
+			}
+		}
+
+		button {
+			display: flex;
+			align-items: center;
+			background-color: #6F3CC3;
+			color: #fff;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			gap: 8px;
+			font-size: 16px;
+			transition: background 0.3s ease;
+
+			&:hover {
+				background-color: #502B9E;
+			}
+		}
+	}
+}
 
 main {
+	max-width: 100em;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: 20px;
+	align-self: center;
+	gap: 24px;
 }
 
-.task-list {
-	max-width: 736px;
-	margin: 20px auto;
-	padding: 20px;
-	background-color: #e0dce4;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.task {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 20px;
-	padding: 10px;
-	border-bottom: 1px solid #ccc;
+#task-list {
 	width: 100%;
-}
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid #E0DCE4;
+	gap: 24px;
+	padding: 20px;
 
-.task:last-child {
-	border-bottom: none;
-}
+	article.task {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		padding: 10px;
+		background: #E0DCE4;
+		color: #262428;
 
-/* Task header styles */
+			input[type="checkbox"] {
+				appearance: none;
+				width: 20px;
+				height: 20px;
+				border: 2px solid #6F3CC3;
+				border-radius: 50%;
+				cursor: pointer;
+				position: relative;
+	
+				&:checked {
+					background-color: #479C6E;
+					border-color: #6F3CC3;
+	
+					&::before {
+						content: "✔";
+						color: white;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						font-size: 14px;
+						font-weight: bold;
+					}
+				}
+			}
+			button{
+				background: transparent;
+				border: none;
+			}
+	}
+}
 
 #tasks-header {
+	width: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	margin-bottom: 2em;
+	justify-content: space-around;
 	color: gray;
-}
 
-#tasks-header h3,
-#tasks-header h2 {
-	font-size: 14px;
-	font-weight: bold;
-}
+	#tasks-counter,
+	#tasks-completed {
+		display: flex;
+		align-items: center;
 
-/* Task counter styles */
+		h3 {
+			font-size: 14px;
+			font-weight: bold;
+			margin-right: 10px;
+		}
 
-#tasks-counter,
-#tasks-completed {
-	display: flex;
-}
-
-#tasks-counter span,
-#tasks-completed span {
-	background-color: black;
-	color: white;
-	width: 50px;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 10px;
-	height: 22px;
-	width: 30px;
-	font-size: 12px;
-	font-weight: bold;
-}
-
-/* Hero section styles */
-
-#hero {
-	display: flex;
-	align-items: center;
-	margin: 20px;
-}
-
-#inputText {
-	flex: 1;
-	margin-right: 10px;
-	padding: 10px;
-	font-size: 18px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-
-button {
-	background-color: #000000;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	&:hover {
-		background-color: #3e8e41;
+		span {
+			background-color: black;
+			color: white;
+			width: 30px;
+			height: 22px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 12px;
+			font-weight: bold;
+		}
 	}
 }

@@ -15,11 +15,13 @@ function addTask() {
 		labelTask.innerText = text.value;
 		taskList.appendChild(taskElement);
 		let removeButton = document.createElement('button');
-		// removeButton.innerHTML = '<i class="ph ph-trash"></i>';
-		removeButton.innerText = 'Borrar';
+		removeButton.innerHTML = '<i class="ph ph-trash"></i>';
 		removeButton.className = 'removeButton';
 		removeButton.onclick = removeTask;
-		taskElement.append(inputTask, labelTask, removeButton);
+		let task = document.createElement('div');
+		task.className = 'task';
+		task.appendChild(inputTask, labelTask);
+		taskElement.append(task, removeButton);
 		text.value = '';
 	}
 }
