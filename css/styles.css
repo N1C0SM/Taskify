@@ -93,6 +93,13 @@ main {
 		background: #E0DCE4;
 		color: #262428;
 
+		div.task{
+			display: flex;
+			gap: .5em;
+			align-items: center;
+			label::first-letter{
+				text-transform: capitalize;
+			}
 			input[type="checkbox"] {
 				appearance: none;
 				width: 20px;
@@ -118,9 +125,15 @@ main {
 					}
 				}
 			}
+		}
 			button{
 				background: transparent;
 				border: none;
+				width: 2em;
+				height: 2em;
+				img{
+					margin: auto;
+				}
 			}
 	}
 }

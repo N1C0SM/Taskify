@@ -8,30 +8,38 @@ function addTask() {
 	} else {
 		let taskElement = document.createElement('article');
 		taskElement.className = 'task';
+		
 		let inputTask = document.createElement('input');
 		inputTask.type = 'checkbox';
+		
 		let labelTask = document.createElement('label');
 		labelTask.for = 'task';
 		labelTask.innerText = text.value;
-		taskList.appendChild(taskElement);
+		
+		let task = document.createElement('div');
+		task.className = 'task';
+		task.append(inputTask, labelTask);
+
 		let removeButton = document.createElement('button');
 		removeButton.innerHTML = '<i class="ph ph-trash"></i>';
 		removeButton.className = 'removeButton';
 		removeButton.onclick = removeTask;
-		let task = document.createElement('div');
-		task.className = 'task';
-		task.appendChild(inputTask, labelTask);
+
 		taskElement.append(task, removeButton);
+
+		taskList.appendChild(taskElement);
+		
 		text.value = '';
 	}
 }
 
 function removeTask(event) {
-	console.log(event.target.parentNode);
-	taskList.removeChild(event.target.parentNode);
+	let taskToRemove = event.target.closest('article');
+	taskList.removeChild(taskToRemove);
 }
 
 addTaskButton.addEventListener('click', addTask);
+
 document.getElementById('inputText').addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
 		addTask();
