@@ -18,7 +18,7 @@ Este es un proyecto de aplicación de lista de tareas (Taskify) creado con HTML,
 
 ### Pasos
 
-1. Clona el repositorio en tu máquina local utilizando el comando `git clone `https://github.com/N1C0SM/Taskify-2.0`
+1. Clona el repositorio en tu máquina local utilizando el comando `git clone `https://github.com/N1C0SM/Taskify.git`
 2. Abre el archivo `index.html` en un navegador web para ver la aplicación en acción
 
 ## 📂 Estructura del proyecto
