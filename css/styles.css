@@ -100,7 +100,7 @@ main {
 			label::first-letter{
 				text-transform: capitalize;
 			}
-			input[type="checkbox"] {
+			input {
 				appearance: none;
 				width: 20px;
 				height: 20px;
@@ -155,17 +155,29 @@ main {
 			margin-right: 10px;
 		}
 
-		span {
-			background-color: black;
-			color: white;
+		div#counter{
+			background: #BFE3D0;
 			width: 30px;
 			height: 22px;
-			border-radius: 50%;
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			font-size: 12px;
-			font-weight: bold;
+			justify-content: center;
+			gap: 10px;
+			color: #2D6C4A;
+			padding: 1em;
+			border-radius: 50%;
+		}
+		div#counter-completed{
+			background: #DDD2EF;
+			color: #6F3CC3;
+			width: 30px;
+			height: 22px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			padding: 1em;
+			border-radius: 50%;
 		}
 	}
 }
